@@ -1,0 +1,100 @@
+/*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    background-color: #82ccdd; 
+    background-color: #d1ccc0;
+    text-align: center;
+    
+} 
+
+.searchEngine{
+    width: 100%;
+    min-height: 0;
+    padding: 5%; 
+    background-color: #d1ccc0;
+    background-position: center;
+    background-size: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.searchBar{
+    width: 50%;
+    max-width: 500px;
+    height: 40px;
+    background: #c7ecee;
+    display: flex;
+    align-items: center;
+    border-radius: 60px;
+    margin-top: -40px;
+    margin-bottom: -40px;
+    padding: 10px 10px;
+}
+
+.searchBar input{
+    background: transparent;
+    flex: 1;
+    border: 0;
+
+    outline: none;
+    padding: 5px 5px;
+    font-size: 15px;
+    color: #2C3A47;
+}
+
+.searchBar button{
+    border: 1px;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    background: #2C3A47;
+    cursor: pointer;
+} */
+
+body{
+    background-color: rgb(220, 77, 11);
+    text-align: center;
+
+}
+h1{
+    color: beige;
+    text-align: center;
+}
+/* form{
+    border: 2px solid olivedrab;
+    text-align: center;
+    width: fit-content;
+    position: absolute;
+    top: 12%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background: #487eb0;
+    height: 40px;
+    border-radius: 40px;
+    padding: 10px;
+
+}
+
+#sendBtn{
+    border:black;
+    border-radius: 4px;
+    background-color: darkblue;
+    padding: 12px 20px;
+    color: aliceblue;
+    width: auto;
+    height: auto; 
+    text-transform: uppercase;
+    cursor: pointer;
+}
+#sendBtn:hover{
+    background-color: #2C3A47;
+}
+.question{
+    width: 600px;
+    text-align: center;
+    margin-left: 470px;
+    color: #2c2c54;
+}*/

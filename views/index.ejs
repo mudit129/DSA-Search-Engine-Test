@@ -1,0 +1,97 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DSA Search Engine</title>
+    <link rel="stylesheet" href="./styles.css">
+    
+</head>
+<body>
+    <h1>Search Engine</h1>
+    <form>
+        <input type="text" name="question" id="question" placeholder="Type your DSA query here...">
+        <input type="submit" value = "Search">
+    </form>
+
+    <!-- <form>
+        <input type="text" name="question" id = "question" placeholder="Search...">
+        <input type="submit" value = "Find" id = "sendBtn">
+    </form> -->
+    <div class="loading"></div>
+    <div class="question">
+        <div class = "title"></div>
+        <div class = "url"><a href=""></a></div>
+        <div class = "body"></div>
+    </div>
+    <br>
+    <div class="question">
+        <div class = "title"></div>
+        <div class = "url"><a href=""></a></div>
+        <div class = "body"></div>
+    </div>
+    <br>
+    <div class="question">
+        <div class = "title"></div>
+        <div class = "url"><a href=""></a></div>
+        <div class = "body"></div>
+    </div>
+    <br>
+    <div class="question">
+        <div class = "title"></div>
+        <div class = "url"><a href=""></a></div>
+        <div class = "body"></div>
+    </div>
+    <br>
+    <div class="question">
+        <div class = "title"></div>
+        <div class = "url"><a href=""></a></div>
+        <div class = "body"></div>
+    </div>
+    <br>
+</body>
+</html>
+
+<script>
+    const form = document.querySelector("form");
+    const questionElement = form.question;
+
+    const questions = document.querySelectorAll(".question");
+    const titles = document.querySelectorAll(".title");
+    const urls = document.querySelectorAll(".url");
+    const quesBody = document.querySelectorAll(".body");
+    const loadingDiv = document.querySelector(".loading");
+
+    // console.log(questions);
+    // console.log(titles);
+    // console.log(urls);
+    // console.log(quesBody);
+
+    form.addEventListener("submit", async(e) =>{
+        e.preventDefault();
+        const question = questionElement.value;
+
+        for(let i = 0; i < 5; i++){
+            titles[i].innerHTML = ``;
+            urls[i].innerHTML = ``;
+            quesBody[i].innerHTML = ``;
+        }
+        loadingDiv.innerHTML = 'Loading...';
+
+        try{
+        const res = await fetch(`/search?question=${question}`, {method:"GET"});
+        const data = await res.json();
+
+        loadingDiv.innerHTML = '';
+
+        for(let i = 0; i < 5; i++){
+            titles[i].innerHTML = `<h3><a href = ${data[i][1]}>${data[i][0]}</a></h3>`;
+            //urls[i].innerHTML = `<h4>url: ${data[i][1]}</h4>`;
+            quesBody[i].innerHTML = `<h5>PS: ${data[i][2]}</h5>`;
+        }
+        }
+        catch(error){
+            alert(error);
+        }
+    });
+</script>

@@ -162,7 +162,7 @@ app.use(express.json());
 
 app.use(express.static(path.join(__dirname, "/public")));
 
-const PORT = 3000;
+const PORT = process.ene.port || 3000;
 
 
 app.get("/", (req, res) => {
@@ -203,6 +203,6 @@ app.get("/search", (req, res) => {
 
 });
 
-app.listen(3000, () => {
+app.listen(PORT, () => {
   console.log("I am on PORT no. " + PORT);
 });

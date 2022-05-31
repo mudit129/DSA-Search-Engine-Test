@@ -4,14 +4,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DSA Search Engine</title>
+    <link rel="icon" href="./favicon.ico">
     <link rel="stylesheet" href="./styles.css">
+
     
 </head>
-<body>
+<body style = "background-image: url(./bg1.png)">
     <h1>Search Engine</h1>
-    <form>
-        <input type="text" name="question" id="question" placeholder="Type your DSA query here...">
-        <input type="submit" value = "Search">
+
+    <form class="Hotbg">
+        <input type="text" name="question" class="Hotbg-txt" placeholder="Search >>>">
+        <input type = "submit" value = "Find" class="Hotbg-btn">
+            <i class="fa fa-search"
+                style="font-size: 12px;">
+            </i>
     </form>
 
     <!-- <form>
@@ -24,31 +30,28 @@
         <div class = "url"><a href=""></a></div>
         <div class = "body"></div>
     </div>
-    <br>
     <div class="question">
         <div class = "title"></div>
         <div class = "url"><a href=""></a></div>
         <div class = "body"></div>
     </div>
-    <br>
+    
     <div class="question">
         <div class = "title"></div>
         <div class = "url"><a href=""></a></div>
         <div class = "body"></div>
     </div>
-    <br>
     <div class="question">
         <div class = "title"></div>
         <div class = "url"><a href=""></a></div>
         <div class = "body"></div>
     </div>
-    <br>
+
     <div class="question">
         <div class = "title"></div>
         <div class = "url"><a href=""></a></div>
         <div class = "body"></div>
     </div>
-    <br>
 </body>
 </html>
 
@@ -61,11 +64,6 @@
     const urls = document.querySelectorAll(".url");
     const quesBody = document.querySelectorAll(".body");
     const loadingDiv = document.querySelector(".loading");
-
-    // console.log(questions);
-    // console.log(titles);
-    // console.log(urls);
-    // console.log(quesBody);
 
     form.addEventListener("submit", async(e) =>{
         e.preventDefault();
@@ -86,8 +84,7 @@
 
         for(let i = 0; i < 5; i++){
             titles[i].innerHTML = `<h3><a href = ${data[i][1]}>${data[i][0]}</a></h3>`;
-            //urls[i].innerHTML = `<h4>url: ${data[i][1]}</h4>`;
-            quesBody[i].innerHTML = `<h5>PS: ${data[i][2]}</h5>`;
+            quesBody[i].innerHTML = `<h5>${data[i][2]}</h5>`;
         }
         }
         catch(error){
